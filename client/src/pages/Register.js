@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+//import { toast } from "react-toastify";
+import { register, reset } from "../features/auth/authSlice";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -8,16 +13,22 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
 
-  const formSubmitHandler = (e) => {
-    e.preventDefault();
-    const registerForm = { name, email, password, rePassword };
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-    console.log(registerForm);
-    setName("");
-    setEmail("");
-    setPassword("");
-    setRePassword("");
-  };
+  const { user, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (isSuccess || user) {
+      navigate("/");
+    }
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
   const inputNameHandler = (e) => {
     setName(e.target.value);
   };
@@ -29,6 +40,21 @@ export default function Register() {
   };
   const inputRePasswordHandler = (e) => {
     setRePassword(e.target.value);
+  };
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    if (password !== rePassword) {
+      console.log("Passwords do not match");
+    } else {
+      const registerForm = { name, email, password};
+      dispatch(register(registerForm));
+      console.log(registerForm);
+    }
+    setName("");
+    setEmail("");
+    setPassword("");
+    setRePassword("");
   };
 
   return (

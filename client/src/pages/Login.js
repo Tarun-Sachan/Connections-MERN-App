@@ -1,16 +1,39 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+//import { toast } from "react-toastify";
+import { login, reset } from "../features/auth/authSlice";
+import { useEffect } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user,  isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (isSuccess || user) {
+      navigate("/");
+    }
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    const registerForm = { email, password };
+    const loginForm = { email, password };
 
-    console.log(registerForm);
+    console.log(loginForm);
+    dispatch(login(loginForm))
     setEmail("");
     setPassword("");
   };
