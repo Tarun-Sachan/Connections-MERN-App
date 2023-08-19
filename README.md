@@ -4,12 +4,12 @@
 
  Server
  Features-
- 1.User registration and login.
- 2.Auth token generation on successful login and registrationn.
- 3.User login Data is stored in mongoDB.
- 4.User password are encrypted using bycryptjs to safeguard user privacy in case of unauthorized access of database.
- 5.express-async-errors are used for status code generation for increasing code readibility.
- 5.Server is hosted on render.
+  1.User registration and login.
+  2.Auth token generation on successful login and registrationn.
+  3.User login Data is stored in mongoDB.
+  4.User password are encrypted using bycryptjs to safeguard user privacy in case of unauthorized access of database.
+  5.express-async-errors are used for status code generation for increasing code readibility.
+  6.Server is hosted on render.
 
  Client
  1.Used react router for route definition.
