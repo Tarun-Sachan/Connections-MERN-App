@@ -2,8 +2,8 @@
 
 [Demo Link](https://connections-mern-app-frontend-git-main-tarunsachan1996-gmailcom.vercel.app/login)
 
- Server
- Features-
+ ## Server
+ 
   1.User registration and login.
   
   2.Auth token generation on successful login and registration.
@@ -16,7 +16,7 @@
   
   6.Server is hosted on render.
 
- Client
+ ## Client-<br/>
  1.Used react router for route definition.
  
  2.User redux for app wide state management.
@@ -27,11 +27,11 @@
  
  5.Front-end hosted on Vercel.
 
- Features pending-
- 1.Ability to add/edit create user profile
+ ## Features pending-<br/>
+ 1.Ability to add/edit create user profile.
  
  2.Ability to fetch and delete connections from mongoDB. current demo subscriptions stored locally are displayed.
 
- Bugs-
+ ## Bugs-<br/>
  1.When logging-out correct web page is not displayed. User has to add slash["/"] at the end of url and press enter.
 
