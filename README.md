@@ -4,8 +4,7 @@
 
  Server
  Features-
-  1.User registration and login.
-  
+  1.User registration and login.<br/>
   2.Auth token generation on successful login and registrationn.\
   3.User login Data is stored in mongoDB.\
   4.User password are encrypted using bycryptjs to safeguard user privacy in case of unauthorized access of database.\
