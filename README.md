@@ -1,9 +1,11 @@
 ﻿# Connections-MERN-App
 
-[Demo Link](https://connections-mern-app-frontend-git-main-tarunsachan1996-gmailcom.vercel.app/login)
+[Demo Link](https://connections-mern-app-frontend-git-main-tarunsachan1996-gmailcom.vercel.app/login) <br/>
 
- ## Server
- 
+General instructions- User can use email as "test@gmail.com" and password as "12345678" to login or create new account.
+
+ ## Server<br/>
+ Features-<br/>
   1.User registration and login.
   
   2.Auth token generation on successful login and registration.
@@ -13,8 +15,10 @@
   4.User password are encrypted using bycryptjs to safeguard user privacy in case of unauthorized access of database.
   
   5.express-async-errors are used for status code generation for increasing code readibility.
+
+  6.Used “CORS” make requests from one website to another website in the browser, which is normally prohibited by another browser policy called the Same-Origin Policy (SOP).
   
-  6.Server is hosted on render.
+  7.Server is hosted on render.
 
  ## Client-<br/>
  1.Used react router for route definition.
