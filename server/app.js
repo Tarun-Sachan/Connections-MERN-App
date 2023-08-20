@@ -9,7 +9,7 @@ const authenticatedUser = require("./middleware/authentication");
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
-
+//"https://connections-mern-app.onrender.com",   cors url
 app.use(express.json());
 app.use(cors());
 // extra packages
