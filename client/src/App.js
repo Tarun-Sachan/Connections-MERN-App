@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Header from "./components/Header";
+import UserDetails from "./pages/UserDetails";
 //import { ToastContainer } from "react-toastify";
 //import "react-toastify/dist/ReactToastify.css";
 
@@ -28,6 +29,7 @@ function App() {
             ></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
+            <Route path="/user" element={<UserDetails />}></Route>
           </Routes>
         </div>
       </Router>
