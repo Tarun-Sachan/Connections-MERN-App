@@ -13,11 +13,20 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 app.use(express.json());
 app.use(cors());
 // extra packages
-app.use(cors(), function (req, res, next) {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://connections-mern-app.onrender.com"
-  ); // update to match the domain you will make the request from
+// app.use(cors(), function (req, res, next) {
+//   res.header(
+//     "Access-Control-Allow-Origin",
+//     "https://connections-mern-app.onrender.com"
+//   ); // update to match the domain you will make the request from
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
